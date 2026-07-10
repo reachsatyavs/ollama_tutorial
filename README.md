@@ -88,29 +88,27 @@ commands, calls other tools, loops until a goal is met. (More on this [below](#-
 
 ## ⚖️ Local vs Cloud
 
-Why run models on your own machine instead of using a cloud service?
+Why run models on your own machine instead of using a cloud service? Here's the head-to-head.
 
-### ✅ Advantages of running locally
-- **Free** — no subscription, no per-token billing. Run it a million times, still $0.
-- **Private** — your prompts and data never leave your computer. Nothing is sent to a company's servers.
-- **Offline** — works on a plane, in a basement, with no internet.
-- **No rate limits** — hammer it as hard as your hardware allows.
-- **Always available** — no outages, no "we've changed our terms," no deprecated models.
-- **Great for learning** — see exactly how the pieces fit together, tweak everything.
+### Side-by-side comparison
 
-### ⚠️ Risks & downsides of the cloud
-- **Cost** — monthly subscriptions and usage bills add up.
-- **Privacy** — your data goes to a third party; it may be logged, cached, or used for training.
-- **Dependency** — outages, price hikes, or a discontinued model can break your workflow overnight.
-- **Internet required** — no connection, no AI.
-- **Rate limits & quotas** — you can be throttled or cut off mid-task.
+| Factor | 🖥️ Local (Ollama) | ☁️ Cloud (ChatGPT, Claude, …) |
+|--------|-------------------|-------------------------------|
+| **Cost** | Free — run it a million times, still $0 | Monthly subscription + per-use billing |
+| **Privacy** | Data never leaves your computer | Sent to a third party; may be logged or used for training |
+| **Internet** | Works fully offline | Required — no connection, no AI |
+| **Rate limits** | None — limited only by your hardware | Throttled/quota'd; can be cut off mid-task |
+| **Availability** | Always up; nothing gets deprecated on you | Outages, price hikes, models retired |
+| **Raw power** | Good enough for everyday tasks (7B model) | Strongest models for hard reasoning & long docs |
+| **Speed** | Fast on GPU/Apple Silicon, slow on CPU | Consistently fast (runs on their servers) |
+| **Setup & upkeep** | You install & manage models and disk space | Zero setup — just log in |
 
-### ❌ Downsides of running locally (be honest)
-- **Less raw power** — a 7B local model is not as capable as a giant frontier cloud model for
-  hard reasoning or very long documents.
-- **Uses your hardware** — needs enough RAM; older or low-memory machines will be slow.
-- **Speed** — on a CPU-only machine, responses can take 1–3 minutes. (Apple Silicon and GPUs are much faster.)
-- **You manage it** — you download models, update tools, and free up disk space yourself.
+### Advantages vs disadvantages at a glance
+
+| | ✅ Advantages | ❌ Disadvantages |
+|---|--------------|------------------|
+| **🖥️ Local** | Free · private · offline · no limits · always available · great for learning | Less raw power · needs enough RAM · slow on CPU-only machines · you maintain it |
+| **☁️ Cloud** | Most capable models · fast · zero setup · scales instantly | Costs money · privacy risk · needs internet · rate limits · vendor lock-in & outages |
 
 **The honest takeaway:** Use **local models** for everyday, private, high-volume tasks where
 "good enough and free" wins (exactly what this repo demos). Reach for a **cloud model** when you
@@ -282,6 +280,7 @@ executes generated code. The model thinks; the agent acts.
 ## 🛠️ The Three Example Agents
 
 All three call your **local** model at `http://localhost:11434` — no cloud, no cost.
+For a syntax-free walkthrough of how each one works, see [`agents/PSEUDOCODE.md`](agents/PSEUDOCODE.md).
 
 > **New to this? Start with the tiny example first:** [`examples/simple_agent.py`](examples/simple_agent.py)
 > is the smallest possible agent — a model that decides to call one tool (`get_weather`) and acts on
@@ -398,6 +397,7 @@ ollama_tutorial/
 ├── pyproject.toml             ← Python project + dependencies (managed by uv)
 ├── package.json               ← Node dependency for the JavaScript example
 ├── agents/                    ← the three example agents
+│   ├── PSEUDOCODE.md           ← plain-English walkthrough of all three (for teaching)
 │   ├── 01_directory_creator_agent.py
 │   ├── 02_markdown_generator_agent.py
 │   └── 03_code_generator_executor_agent.py

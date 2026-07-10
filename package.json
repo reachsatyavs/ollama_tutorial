@@ -1,0 +1,28 @@
+{
+  "name": "ollama",
+  "version": "1.0.0",
+  "description": "> **The big idea:** You don't need a paid cloud subscription (ChatGPT Plus, Claude Pro, etc.) > to get real work done with AI. You can run capable models **on your own laptop**, for free, > fully offline — and even wire them into small programs (\"agents\") that do useful things like > scaffolding a project, writing documentation, or generating code. > > This repo teaches you how, step by step, with **three working example agents** you can run today.",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs",
+    "example": "examples"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/reachsatyavs/ollama_tutorial.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/reachsatyavs/ollama_tutorial/issues"
+  },
+  "homepage": "https://github.com/reachsatyavs/ollama_tutorial#readme",
+  "dependencies": {
+    "ollama": "^0.6.3"
+  }
+}

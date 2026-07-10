@@ -282,8 +282,11 @@ executes generated code. The model thinks; the agent acts.
 ## 🛠️ The Three Example Agents
 
 All three call your **local** model at `http://localhost:11434` — no cloud, no cost.
-Full CLI reference is in [docs/AGENTS_USAGE_GUIDE.md](docs/AGENTS_USAGE_GUIDE.md); a 5-minute
-smoke test is in [docs/QUICK_START.md](docs/QUICK_START.md).
+
+> **New to this? Start with the tiny example first:** [`examples/simple_agent.py`](examples/simple_agent.py)
+> is the smallest possible agent — a model that decides to call one tool (`get_weather`) and acts on
+> the result. Run it with `uv run examples/simple_agent.py`. There's also a plain (non-agent) model
+> call in [`examples/qwen_hello.js`](examples/qwen_hello.js) using the JavaScript client.
 
 ### Agent 1 — Directory Structure Creator
 📄 [`agents/01_directory_creator_agent.py`](agents/01_directory_creator_agent.py)
@@ -393,16 +396,15 @@ The model is too big for your RAM. Switch to a smaller model (see the requiremen
 ollama_tutorial/
 ├── README.md                  ← you are here
 ├── pyproject.toml             ← Python project + dependencies (managed by uv)
+├── package.json               ← Node dependency for the JavaScript example
 ├── agents/                    ← the three example agents
 │   ├── 01_directory_creator_agent.py
 │   ├── 02_markdown_generator_agent.py
 │   └── 03_code_generator_executor_agent.py
-├── examples/
-│   └── example_structure.json ← sample layout for Agent 1
-└── docs/
-    ├── QUICK_START.md          ← 5-minute smoke test
-    ├── AGENTS_USAGE_GUIDE.md   ← full CLI reference for all three agents
-    └── CLAUDE_CODE_CONTEXT.md  ← ideas for extending the agents
+└── examples/
+    ├── simple_agent.py         ← the smallest possible agent (tool calling) — start here
+    ├── qwen_hello.js           ← plain model call via the JavaScript client
+    └── example_structure.json  ← sample layout for Agent 1
 ```
 
 ---

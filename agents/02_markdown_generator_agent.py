@@ -43,7 +43,7 @@ class MarkdownGeneratorAgent:
                     "model": "qwen2.5-coder:7b",
                     "prompt": prompt,
                     "temperature": 0.3,
-                    "stream": False
+                    "stream": True
                 },
                 timeout=300
             )

@@ -1,0 +1,43 @@
+{
+  "src": {
+    "app.py": null,
+    "models.py": null,
+    "routes": {
+      "auth.py": null,
+      "events.py": null,
+      "admin.py": null,
+      "__init__.py": null
+    },
+    "utils.py": null,
+    "__init__.py": null
+  },
+  "templates": {
+    "base.html": null,
+    "login.html": null,
+    "register.html": null,
+    "events.html": null,
+    "event_detail.html": null,
+    "admin.html": null
+  },
+  "static": {
+    "css": {
+      "style.css": null
+    },
+    "js": {
+      "app.js": null
+    }
+  },
+  "tests": {
+    "test_auth.py": null,
+    "test_events.py": null,
+    "__init__.py": null
+  },
+  "config": {
+    "config.py": null,
+    "database.py": null
+  },
+  "data": {
+  },
+  "logs": {
+  }
+}

@@ -1,0 +1,12 @@
+[project]
+name = "ollama-tutorial"
+version = "0.1.0"
+description = "Learn to run LLMs locally with Ollama and build simple AI agents — no cloud subscription needed."
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "requests>=2.31",
+]
+
+[tool.uv]
+package = false
